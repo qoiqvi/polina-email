@@ -4,104 +4,240 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Портфолио Полины Смирновой</title>
-		<style>
-			a.portfolio-btn:hover {
-				background-color: #d4ff00;
-				color: #000;
-				border-color: #000;
-				transition: background 0.2s, color 0.2s;
+		<!--[if mso]>
+		<noscript>
+			<xml>
+				<o:OfficeDocumentSettings>
+					<o:PixelsPerInch>96</o:PixelsPerInch>
+				</o:OfficeDocumentSettings>
+			</xml>
+		</noscript>
+		<![endif]-->
+		<style type="text/css">
+			/* Адаптивные стили для мобильных устройств */
+			@media only screen and (max-width: 600px) {
+				/* Основные контейнеры */
+				.email-container {
+					width: 100% !important;
+					max-width: 100% !important;
+				}
+				
+				.content-wrapper {
+					padding: 10px !important;
+				}
+				
+				/* Заголовок и навигация */
+				.header-links {
+					display: block !important;
+					text-align: center !important;
+					padding: 5px 0 !important;
+				}
+				
+				.header-links td {
+					display: block !important;
+					padding: 5px 0 !important;
+					text-align: center !important;
+				}
+				
+				.header-right {
+					text-align: center !important;
+					padding-top: 10px !important;
+				}
+				
+				/* Основной текст */
+				.hero-text {
+					padding: 60px 20px !important;
+					font-size: 16px !important;
+					line-height: 1.5 !important;
+				}
+				
+				.hero-text br {
+					display: none !important;
+				}
+				
+				/* Сетка проектов - делаем двухколоночной */
+				.project-grid {
+					width: 100% !important;
+				}
+				
+				.project-cell {
+					width: 50% !important;
+					height: 180px !important;
+					display: inline-block !important;
+					vertical-align: top !important;
+				}
+				
+				/* Улучшенная обработка изображений в сетке */
+				.project-cell img {
+					max-width: 70px !important;
+					max-height: 70px !important;
+					width: auto !important;
+					height: auto !important;
+					object-fit: contain !important;
+				}
+				
+				.project-number {
+					font-size: 12px !important;
+					padding: 5px !important;
+				}
+				
+				.project-title {
+					font-size: 11px !important;
+					margin-top: 5px !important;
+				}
+				
+				/* Кнопка */
+				.portfolio-button {
+					padding: 12px 24px !important;
+					font-size: 16px !important;
+					display: block !important;
+					width: 80% !important;
+					max-width: 280px !important;
+					margin: 0 auto !important;
+					text-align: center !important;
+				}
+				
+				/* Мобильная секция с постерами - стекинг */
+				.poster-section {
+					display: block !important;
+				}
+				
+				.poster-cell {
+					display: block !important;
+					width: 100% !important;
+					height: auto !important;
+					min-height: 250px !important;
+				}
+				
+				.poster-text {
+					padding: 20px 15px !important;
+					font-size: 14px !important;
+					min-height: 200px !important;
+				}
+				
+				.poster-text div {
+					margin: 20px 10px !important;
+				}
+				
+				/* Адаптивные изображения постеров */
+				.poster-image {
+					width: 100% !important;
+					height: auto !important;
+					max-height: 300px !important;
+					object-fit: cover !important;
+					object-position: center !important;
+				}
+				
+				/* Контейнер для изображений с соотношением сторон */
+				.image-container {
+					position: relative !important;
+					width: 100% !important;
+					height: 250px !important;
+					overflow: hidden !important;
+					background-color: #f5f5f5 !important;
+				}
+				
+				.image-container img {
+					position: absolute !important;
+					top: 50% !important;
+					left: 50% !important;
+					transform: translate(-50%, -50%) !important;
+					max-width: 100% !important;
+					max-height: 100% !important;
+					width: auto !important;
+					height: auto !important;
+					object-fit: contain !important;
+				}
+				
+				/* Контакты */
+				.contacts {
+					padding: 20px 15px !important;
+					font-size: 14px !important;
+				}
+				
+				/* Повторный текст */
+				.repeat-text {
+					padding: 40px 20px !important;
+					font-size: 16px !important;
+				}
+				
+				/* Скрываем пустые ячейки на мобильных */
+				.empty-cell {
+					display: none !important;
+				}
 			}
-			.card-number {
-				position: absolute;
-				top: 10px;
-				left: 10px;
-				font-size: 16px;
-				font-family: Georgia, serif;
-				font-weight: normal;
-				color: #000;
-				z-index: 2;
-				background: none;
-				margin: 0;
-				padding: 5px;
-				font-size: 16px !important;	
+			
+			/* Дополнительные стили для очень маленьких экранов */
+			@media only screen and (max-width: 480px) {
+				.project-cell {
+					width: 100% !important;
+					height: 150px !important;
+				}
+				
+				.hero-text {
+					font-size: 14px !important;
+					padding: 40px 15px !important;
+				}
+				
+				.poster-text {
+					font-size: 13px !important;
+					padding: 15px 10px !important;
+				}
+				
+				.portfolio-button {
+					width: 90% !important;
+					padding: 10px 20px !important;
+					font-size: 14px !important;
+				}
+				
+				.image-container {
+					height: 200px !important;
+				}
+			}
+			
+			/* Стили для темной темы */
+			@media (prefers-color-scheme: dark) {
+				.dark-bg {
+					background-color: #1a1a1a !important;
+				}
+				.dark-text {
+					color: #ffffff !important;
+				}
 			}
 		</style>
 	</head>
-	<body
-		style="
-			margin: 0;
-			padding: 0;
-			font-family: Georgia, serif;
-			background-color: #ffffff;
-		"
-	>
-		<table
-			width="100%"
-			cellpadding="0"
-			cellspacing="0"
-			border="0"
-			style="
-				font-family: Georgia, serif;
-				color: #000000;
-				background-color: #ffffff;
-				padding: 20px;
-			"
-		>
-			<tr >
-				<td align="center">
-					<table
-						width="100%"
-						cellpadding="0"
-						cellspacing="0"
-						border="0"
-					>
+	<body style="margin: 0; padding: 0; font-family: Georgia, serif; background-color: #ffffff; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+		<!--[if mso]>
+		<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+		<tr>
+		<td>
+		<![endif]-->
+		
+		<table role="presentation" class="email-container" width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: Georgia, serif; color: #000000; background-color: #ffffff; max-width: 650px; margin: 0 auto;">
+			<tr>
+				<td class="content-wrapper" style="padding: 20px;">
+					<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 						<tr>
-					<td align="left" style="font-size: 14px;">
-						<table cellpadding="0" cellspacing="0" border="0">
-							<tr>
-								<td style="padding-right: 100px;">
-									<a
-										href="https://acidic-moonflower-f13.notion.site/97d71ed1690c4a37b08762a86281e978"
-										target="_blank"
-										style="color: #000000; text-decoration: underline;"
-										>полное портфолио</a>
-								</td>
-								<td>
-									<a
-										href="https://www.instagram.com/avopolly/"
-										target="_blank"
-										style="color: #000000; text-decoration: underline;"
-										>мой инстаграм</a>
-								</td>
-							</tr>
-						</table>
-					</td>
-							<td align="right" style="font-size: 14px">
-								<a
-									href="https://t.me/avopollly"
-									target="_blank"
-									style="
-										color: #000000;
-										text-decoration: underline;
-									"
-									>мой тг</a
-								>
+							<td class="header-links" style="font-size: 14px; padding-bottom: 10px;">
+								<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+									<tr>
+										<td style="padding-right: 20px; text-align: left;">
+											<a href="https://acidic-moonflower-f13.notion.site/97d71ed1690c4a37b08762a86281e978" target="_blank" style="color: #000000; text-decoration: underline; font-family: Georgia, serif;">полное портфолио</a>
+										</td>
+										<td style="text-align: left;">
+											<a href="https://www.instagram.com/avopolly/" target="_blank" style="color: #000000; text-decoration: underline; font-family: Georgia, serif;">мой инстаграм</a>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td class="header-right" style="font-size: 14px; padding-bottom: 10px; text-align: right;">
+								<a href="https://t.me/avopollly" target="_blank" style="color: #000000; text-decoration: underline; font-family: Georgia, serif;">мой тг</a>
 							</td>
 						</tr>
-						<tr >
-							<td
-								colspan="3"
-								style="
-									padding-top: 120px;
-									padding-bottom: 120px;
-									font-size: 18px;
-									line-height: 1.6;
-									text-align: center;
-								"
-							>
+						<tr>
+							<td colspan="2" class="hero-text" style="padding: 120px 20px; font-size: 18px; line-height: 1.6; text-align: center; font-family: Georgia, serif;">
 								Привет! Я Полина, дизайнер с опытом<br />
 								работы 3 года. Я бы хотела работать с вами.<br /><br />
-
 								Работала в PostPost, разрабатывала<br />
 								креативные материалы для соцсетей,<br />
 								лендинги, айдентику для брендов ГАЛС,<br />
@@ -109,15 +245,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td
-								colspan="3"
-								style="
-									padding-top: 40px;
-									font-size: 14px;
-									color: #555555;
-									text-align: left;
-								"
-							>
+							<td colspan="2" style="padding-top: 40px; font-size: 14px; color: #555555; text-align: left; font-family: Georgia, serif;">
 								здесь все кликабельно
 							</td>
 						</tr>
@@ -126,119 +254,209 @@
 			</tr>
 		</table>
 
-		<table width="100%" cellpadding="0" cellspacing="0" border="1" style="border-style: solid; ">
+		<!-- Адаптивная сетка проектов с улучшенной обработкой изображений -->
+		<table role="presentation" class="project-grid email-container" width="100%" cellpadding="0" cellspacing="0" border="1" style="border-style: solid; border-color: #000000; max-width: 650px; margin: 0 auto;">
 			<!-- Первая строка -->
 			<tr>
-				<td width="14.28%" height="200">
-					
+				<td class="project-cell empty-cell" width="14.28%" height="200" style="border: 1px solid #000000;">
+					<!-- Пустая ячейка - скрывается на мобильных -->
 				</td>
-				<td width="14.28%" height="200" style="position: relative;">
-					<a target="_blank" href="https://acidic-moonflower-f13.notion.site/SMM-5b702906569c4048a2fba6b71e2016ef" style="text-align: center; cursor: pointer; display: block; text-decoration: none; color: #000000; ">
-						<div class="card-number">1</div>
-						<img src="https://i.postimg.cc/3rqY2XbP/gals.png" alt="галс" style="width: 55%; height: 55%; margin: 10px auto; display: block; border-radius: 10px;" />
-						<div style="margin-top: 10px;">галс</div>
-					</a>
+				<td class="project-cell" width="14.28%" height="200" style="border: 1px solid #000000;">
+					<table role="presentation" width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td class="project-number" align="left" valign="top" style="padding: 10px; font-size: 16px; font-family: Georgia, serif; font-weight: normal; color: #000000;">
+								1
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="middle" style="padding: 10px;">
+								<a href="https://acidic-moonflower-f13.notion.site/SMM-5b702906569c4048a2fba6b71e2016ef" target="_blank" style="text-decoration: none; color: #000000; display: block;">
+									<div style="width: 80px; height: 80px; margin: 0 auto; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+										<img src="https://qoiqvi.github.io/polina-email/public/gals.png" alt="Проект ГАЛС - креативные материалы для соцсетей" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; border-radius: 10px; border: 0; object-fit: contain;" />
+									</div>
+									<div class="project-title" style="margin-top: 10px; font-family: Georgia, serif; font-size: 14px; text-align: center;">галс</div>
+								</a>
+							</td>
+						</tr>
+					</table>
 				</td>
-				<td width="14.28%" height="200" style="position: relative;">
-					<a target="_blank" href="https://acidic-moonflower-f13.notion.site/10dbfe0f4c1980168e4bda9b3a633ea5" style="text-align: center; cursor: pointer; display: block; text-decoration: none; color: #000000; ">
-						<div class="card-number">2</div>
-						<img src="https://i.postimg.cc/QMMWHgzH/scho2.png" alt="alkin" style="width: 70%; height: 70%; margin: 10px auto; display: block; border-radius: 10px;" />
-						<div style="margin-top: 10px;">щелочь</div>
-					</a>
+				<td class="project-cell" width="14.28%" height="200" style="border: 1px solid #000000;">
+					<table role="presentation" width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td class="project-number" align="left" valign="top" style="padding: 10px; font-size: 16px; font-family: Georgia, serif; font-weight: normal; color: #000000;">
+								2
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="middle" style="padding: 10px;">
+								<a href="https://acidic-moonflower-f13.notion.site/10dbfe0f4c1980168e4bda9b3a633ea5" target="_blank" style="text-decoration: none; color: #000000; display: block;">
+									<div style="width: 90px; height: 60px; margin: 0 auto; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+										<img src="https://qoiqvi.github.io/polina-email/public/scho2.png" alt="Проект Щелочь - дизайн и брендинг" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; border-radius: 10px; border: 0; object-fit: contain;" />
+									</div>
+									<div class="project-title" style="margin-top: 10px; font-family: Georgia, serif; font-size: 14px; text-align: center;">щелочь</div>
+								</a>
+							</td>
+						</tr>
+					</table>
 				</td>
-				<td width="14.28%" height="200" style="background-color: #CCFF00"></td>
-				<td width="14.28%" height="200" style="position: relative;">
-					<a target="_blank" href="https://acidic-moonflower-f13.notion.site/SMM-design-for-FU-Case-Club-167bfe0f4c19812685bbd9ada818d526" style="text-align: center; cursor: pointer; display: block; text-decoration: none; color: #000000; ">
-						<div class="card-number">3</div>
-						<img src="https://i.postimg.cc/4NLGXzp8/fuc.png" alt="fuc" style="width: 55%; height: 55%; margin: 10px auto; display: block; border-radius: 10px;" />
-						<div style="margin-top: 10px;">fu case club</div>
-					</a>
+				<td class="project-cell empty-cell" width="14.28%" height="200" style="background-color: #CCFF00; border: 1px solid #000000;">
+					<!-- Цветная ячейка - скрывается на мобильных -->
 				</td>
-				<td width="14.28%" height="200" style="position: relative;">
-					<a target="_blank" href="https://acidic-moonflower-f13.notion.site/Innovation-Fintech-meetup-1b05159b86414af5832fbb714ad3d6c2" style="text-align: center; cursor: pointer; display: block; text-decoration: none; color: #000000; ">
-						<div class="card-number">4</div>
-						<img src="https://i.postimg.cc/ZYXxMZM8/fintech2.png" alt="fuc" style="width: 70%; height: 70%; margin: 10px auto; display: block; border-radius: 10px;" />
-						<div style="margin-top: 10px;">fintech meetup</div>
-					</a>
+				<td class="project-cell" width="14.28%" height="200" style="border: 1px solid #000000;">
+					<table role="presentation" width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td class="project-number" align="left" valign="top" style="padding: 10px; font-size: 16px; font-family: Georgia, serif; font-weight: normal; color: #000000;">
+								3
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="middle" style="padding: 10px;">
+								<a href="https://acidic-moonflower-f13.notion.site/SMM-design-for-FU-Case-Club-167bfe0f4c19812685bbd9ada818d526" target="_blank" style="text-decoration: none; color: #000000; display: block;">
+									<div style="width: 75px; height: 75px; margin: 0 auto; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+										<img src="https://qoiqvi.github.io/polina-email/public/fuc.png" alt="FU Case Club - SMM дизайн" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; border-radius: 10px; border: 0; object-fit: contain;" />
+									</div>
+									<div class="project-title" style="margin-top: 10px; font-family: Georgia, serif; font-size: 14px; text-align: center;">fu case club</div>
+								</a>
+							</td>
+						</tr>
+					</table>
 				</td>
-				<td width="14.28%" height="200" style="background-color: #CCFF00"></td>
+				<td class="project-cell" width="14.28%" height="200" style="border: 1px solid #000000;">
+					<table role="presentation" width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td class="project-number" align="left" valign="top" style="padding: 10px; font-size: 16px; font-family: Georgia, serif; font-weight: normal; color: #000000;">
+								4
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="middle" style="padding: 10px;">
+								<a href="https://acidic-moonflower-f13.notion.site/Innovation-Fintech-meetup-1b05159b86414af5832fbb714ad3d6c2" target="_blank" style="text-decoration: none; color: #000000; display: block;">
+									<div style="width: 85px; height: 65px; margin: 0 auto; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+										<img src="https://qoiqvi.github.io/polina-email/public/fintech2.png" alt="Innovation Fintech meetup - дизайн мероприятия" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; border-radius: 10px; border: 0; object-fit: contain;" />
+									</div>
+									<div class="project-title" style="margin-top: 10px; font-family: Georgia, serif; font-size: 14px; text-align: center;">fintech meetup</div>
+								</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td class="project-cell empty-cell" width="14.28%" height="200" style="background-color: #CCFF00; border: 1px solid #000000;">
+					<!-- Цветная ячейка - скрывается на мобильных -->
+				</td>
 			</tr>
 			<!-- Вторая строка -->
 			<tr>
-				<td width="14.28%" height="200"></td>
-				<td width="14.28%" height="200" style="background-color: #CCFF00"></td>
-				<td width="14.28%" height="200"  style="position: relative;">
-					<a target="_blank" href="https://acidic-moonflower-f13.notion.site/BOLD-12fbfe0f4c1980c083dae1152c25b8b9" style="text-align: center; cursor: pointer; display: block; text-decoration: none; color: #000000;">
-						<div class="card-number">5</div>
-						<img src="https://i.postimg.cc/WzZgvFHM/bold.png" alt="fuc" style="width: 50%; height: 60%; margin: 10px auto; display: block; border-radius: 10px;" />
-						<div style="margin-top: 10px;">bold</div>
-					</a>
+				<td class="project-cell empty-cell" width="14.28%" height="200" style="border: 1px solid #000000;">
+					<!-- Пустая ячейка - скрывается на мобильных -->
 				</td>
-				<td width="14.28%" height="200" style="position: relative;">
-					<a target="_blank" href="https://hello.sosediapp.com" style="text-align: center; cursor: pointer; display: block; text-decoration: none; color: #000000;">
-						<div class="card-number">6</div>
-						<img src="https://i.postimg.cc/c13n63F3/sosedi2.png" alt="fuc" style="width: 70%; height: 60%; margin: 10px auto; display: block; border-radius: 10px;" />
-						<div style="margin-top: 10px;">соседи</div>
-					</a>
+				<td class="project-cell empty-cell" width="14.28%" height="200" style="background-color: #CCFF00; border: 1px solid #000000;">
+					<!-- Цветная ячейка - скрывается на мобильных -->
 				</td>
-
-				<td width="14.28%" height="200" style="background-color: #CCFF00; position: relative;">
-					<a target="_blank" href="https://acidic-moonflower-f13.notion.site/SMM-PostPost-445449724c7240d99eacff2f51a52173" style="text-align: center; cursor: pointer; display: block; text-decoration: none; color: #000000;">
-						<div class="card-number">7</div>
-						<img src="https://i.postimg.cc/15Pftjnx/postpost.png" alt="fuc" style="width: 55%; height: 55%; margin: 10px auto; display: block; border-radius: 10px;" />
-						<div style="margin-top: 10px;">post post</div>
-					</a>
+				<td class="project-cell" width="14.28%" height="200" style="border: 1px solid #000000;">
+					<table role="presentation" width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td class="project-number" align="left" valign="top" style="padding: 10px; font-size: 16px; font-family: Georgia, serif; font-weight: normal; color: #000000;">
+								5
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="middle" style="padding: 10px;">
+								<a href="https://acidic-moonflower-f13.notion.site/BOLD-12fbfe0f4c1980c083dae1152c25b8b9" target="_blank" style="text-decoration: none; color: #000000; display: block;">
+									<div style="width: 70px; height: 85px; margin: 0 auto; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+										<img src="https://qoiqvi.github.io/polina-email/public/bold.png" alt="BOLD - брендинг и айдентика" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; border-radius: 10px; border: 0; object-fit: contain;" />
+									</div>
+									<div class="project-title" style="margin-top: 10px; font-family: Georgia, serif; font-size: 14px; text-align: center;">bold</div>
+								</a>
+							</td>
+						</tr>
+					</table>
 				</td>
-				<td width="14.28%" height="200" style="position: relative;">
-					<a target="_blank" href="https://acidic-moonflower-f13.notion.site/Yellow-Yeti-Ai-generations-1babfe0f4c198021b495ccd7b64f42a5" style="text-align: center; cursor: pointer; display: block; text-decoration: none; color: #000000;">
-						<div class="card-number">8</div>
-						<img src="https://i.postimg.cc/BvdvGY9V/2.png" alt="ai generations" style="width: 55%; height: 55%; margin: 10px auto; display: block; border-radius: 10px;" />
-						<div style="margin-top: 10px;">ai generations</div>
-					</a>
+				<td class="project-cell" width="14.28%" height="200" style="border: 1px solid #000000;">
+					<table role="presentation" width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td class="project-number" align="left" valign="top" style="padding: 10px; font-size: 16px; font-family: Georgia, serif; font-weight: normal; color: #000000;">
+								6
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="middle" style="padding: 10px;">
+								<a href="https://hello.sosediapp.com" target="_blank" style="text-decoration: none; color: #000000; display: block;">
+									<div style="width: 85px; height: 70px; margin: 0 auto; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+										<img src="https://qoiqvi.github.io/polina-email/public/sosedi2.png" alt="Соседи - мобильное приложение" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; border-radius: 10px; border: 0; object-fit: contain;" />
+									</div>
+									<div class="project-title" style="margin-top: 10px; font-family: Georgia, serif; font-size: 14px; text-align: center;">соседи</div>
+								</a>
+							</td>
+						</tr>
+					</table>
 				</td>
-				<td width="14.28%" height="200"></td>
-				<td width="14.28%" height="200"></td>
+				<td class="project-cell" width="14.28%" height="200" style="background-color: #CCFF00; border: 1px solid #000000;">
+					<table role="presentation" width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td class="project-number" align="left" valign="top" style="padding: 10px; font-size: 16px; font-family: Georgia, serif; font-weight: normal; color: #000000;">
+								7
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="middle" style="padding: 10px;">
+								<a href="https://acidic-moonflower-f13.notion.site/SMM-PostPost-445449724c7240d99eacff2f51a52173" target="_blank" style="text-decoration: none; color: #000000; display: block;">
+									<div style="width: 75px; height: 75px; margin: 0 auto; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+										<img src="https://qoiqvi.github.io/polina-email/public/postpost.png" alt="PostPost - SMM и креативы" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; border-radius: 10px; border: 0; object-fit: contain;" />
+									</div>
+									<div class="project-title" style="margin-top: 10px; font-family: Georgia, serif; font-size: 14px; text-align: center;">post post</div>
+								</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td class="project-cell" width="14.28%" height="200" style="border: 1px solid #000000;">
+					<table role="presentation" width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td class="project-number" align="left" valign="top" style="padding: 10px; font-size: 16px; font-family: Georgia, serif; font-weight: normal; color: #000000;">
+								8
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="middle" style="padding: 10px;">
+								<a href="https://acidic-moonflower-f13.notion.site/Yellow-Yeti-Ai-generations-1babfe0f4c198021b495ccd7b64f42a5" target="_blank" style="text-decoration: none; color: #000000; display: block;">
+									<div style="width: 75px; height: 90px; margin: 0 auto; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+										<img src="https://qoiqvi.github.io/polina-email/public/ai.png" alt="Yellow Yeti - AI генерации" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; border-radius: 10px; border: 0; object-fit: contain;" />
+									</div>
+									<div class="project-title" style="margin-top: 10px; font-family: Georgia, serif; font-size: 14px; text-align: center;">ai generations</div>
+								</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td class="project-cell empty-cell" width="14.28%" height="200" style="border: 1px solid #000000;">
+					<!-- Пустая ячейка - скрывается на мобильных -->
+				</td>
 			</tr>
 		</table>
 
-
-		<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 40px 0;">
+		<!-- Адаптивная кнопка портфолио -->
+		<table role="presentation" class="email-container" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 40px auto; max-width: 650px;">
 			<tr>
-				<td align="center">
-					<a
-						href="https://acidic-moonflower-f13.notion.site/97d71ed1690c4a37b08762a86281e978"
-						class="portfolio-btn"
-						target="_blank"
-						style="
-							display: inline-block;
-							padding: 16px 32px;
-							border: 2px solid black;
-							text-decoration: none;
-							color: black;
-							font-size: 18px;
-							transition: background 0.5s, color 0.5s;
-						"
-					>
+				<td align="center" style="padding: 0 20px;">
+					<!--[if mso]>
+					<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://acidic-moonflower-f13.notion.site/97d71ed1690c4a37b08762a86281e978" style="height:54px;v-text-anchor:middle;width:300px;" arcsize="0%" stroke="t" strokecolor="#000000" strokeweight="2px" fillcolor="#ffffff">
+					<w:anchorlock/>
+					<center style="color:#000000;font-family:Georgia,serif;font-size:18px;font-weight:normal;">посмотреть все портфолио</center>
+					</v:roundrect>
+					<![endif]-->
+					<!--[if !mso]><!-->
+					<a href="https://acidic-moonflower-f13.notion.site/97d71ed1690c4a37b08762a86281e978" target="_blank" class="portfolio-button" style="display: inline-block; padding: 16px 32px; border: 2px solid #000000; text-decoration: none; color: #000000; font-size: 18px; font-family: Georgia, serif; background-color: #ffffff; mso-border-alt: none; min-height: 44px; box-sizing: border-box;">
 						посмотреть все портфолио
 					</a>
+					<!--<![endif]-->
 				</td>
 			</tr>
 		</table>
 
-		<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 40px 0;">
+		<!-- Адаптивный повторный текст -->
+		<table role="presentation" class="email-container" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 40px auto; max-width: 650px;">
 			<tr>
-				<td
-					align="center"
-					style="
-						padding-top: 40px;
-						padding-bottom: 40px;
-						font-size: 18px;
-						line-height: 1.6;
-						text-align: center;
-						width: 50% !important;
-						padding: 100px 20% ;
-					"
-				>
+				<td class="repeat-text" align="center" style="padding: 100px 20px; font-size: 18px; line-height: 1.6; text-align: center; font-family: Georgia, serif;">
 					Привет! Я Полина, дизайнер с опытом
 					работы 3 года. Я бы хотела работать с вами.
 					Работала в PostPost, разрабатывала
@@ -248,21 +466,21 @@
 				</td>
 			</tr>
 		</table>
-<!-- https://i.postimg.cc/XNG0ktQT/Compress-PNG-Image-1.png -->
 
-		<table width="100%" cellpadding="0" cellspacing="0">
+		<!-- Улучшенная адаптивная секция с постерами -->
+		<table role="presentation" class="email-container poster-section" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 650px; margin: 0 auto;">
 			<tr>
-				<td width="50%" height="400" style="background-color: #CCFF00">
-					<table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+				<td class="poster-cell" width="50%" style="background-color: #CCFF00; vertical-align: top;">
+					<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" ">
 						<tr>
-							<td style="padding: 20px; font-size: 16px; line-height: 1.5; vertical-align: top;">
-								<div style="margin: 40px 20px 40px 0">
+							<td class="poster-text" style="padding: 20px; font-size: 16px; line-height: 1.5; vertical-align: top; font-family: Georgia, serif;">
+								<div style="margin: 40px 20px 40px 0;">
 									Эта серия постеров — результат творческого челленджа: три дня — три работы о себе, о городе и о чувствах. Я исследовала, как можно визуально рассказать личные истории через постер.
 								</div>
 							</td>
 						</tr>
 						<tr>
-							<td style="padding: 20px; font-size: 16px; line-height: 1.5; vertical-align: bottom;">
+							<td class="poster-text" style="padding: 20px; font-size: 16px; line-height: 1.5; vertical-align: bottom; font-family: Georgia, serif;">
 								<div>
 									графический дизайн / брендинг
 								</div>
@@ -270,26 +488,29 @@
 						</tr>
 					</table>
 				</td>
-				<td width="50%" height="400" style="background-color: #FFFFFF">
-					<img src="https://i.postimg.cc/hjCPQx4T/Compress-PNG-Image-2.png" alt="постер" style="width: 100%; height: 100%; ">
+				<td class="poster-cell" width="50%" style="background-color: #FFFFFF; vertical-align: top;">
+					<div class="image-container" style="position: relative; width: 100%; height: 400px; overflow: hidden; background-color: #f5f5f5;">
+						<img src="https://qoiqvi.github.io/polina-email/public/posters.png" alt="Постер из серии о личных историях - дизайн Полины Смирновой" class="poster-image" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; border: 0; object-fit: contain;" />
+					</div>
 				</td>
 			</tr>
 			<tr>
-				<td width="50%" height="400">
-					<img src="https://i.postimg.cc/L6Jhfy1X/Compress-PNG-Image-1.png" alt="постер" style="width: 100%; height: 100%; ">
-
+				<td class="poster-cell" width="50%" style="vertical-align: top;">
+					<div class="image-container" style="position: relative; width: 100%; height: 400px; overflow: hidden; background-color: #f5f5f5;">
+						<img src="https://qoiqvi.github.io/polina-email/public/combo.png" alt="Баннер для стартапа ComboCards - дизайн экспозоны" class="poster-image" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; border: 0; object-fit: contain;" />
+					</div>
 				</td>
-				<td width="50%" height="400" style="background-color: #FFFFFF">
-					<table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+				<td class="poster-cell" width="50%" style="background-color: #FFFFFF; vertical-align: top;">
+					<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" ">
 						<tr>
-							<td style="padding: 20px; font-size: 16px; line-height: 1.5; vertical-align: top;">
-								<div style="margin: 40px 20px 40px 0">
+							<td class="poster-text" style="padding: 20px; font-size: 16px; line-height: 1.5; vertical-align: top; font-family: Georgia, serif;">
+								<div style="margin: 40px 20px 40px 0;">
 									графический дизайн / брендинг
 								</div>
 							</td>
 						</tr>
 						<tr>
-							<td style="padding: 20px; font-size: 16px; line-height: 1.5; vertical-align: bottom;">
+							<td class="poster-text" style="padding: 20px; font-size: 16px; line-height: 1.5; vertical-align: bottom; font-family: Georgia, serif;">
 								<div>
 									Дизайн экспозоны для стартапа ComboCards на международной выставке. Я разработала баннер размером 3×4 м с акцентом на лаконичный месседж и узнаваемый визуальный стиль бренда.
 								</div>
@@ -300,51 +521,23 @@
 			</tr>
 		</table>
 
-					<!-- Контакты -->
-			<table
-				width="100%"
-				cellpadding="0"
-				cellspacing="0"
-				border="0"
-				style="padding: 40px 20px"
-			>
-				<tr>
-					<td
-						style="
-							background-color: #d4ff00;
-							padding: 20px;
-							font-size: 16px;
-						"
-					>
-						<strong
-							>Буду рада обсудить сотрудничество! Хорошего
-							дня!</strong
-						><br />
-						Смирнова Полина / ТГ:
-						<a
-							href="https://t.me/avopolly"
-							style="
-								color: inherit;
-								text-decoration: none;
-							"
-							>@avopolly</a
-						>
-						/
-						<a
-							href="mailto:Smirnovapolina.03@mail.ru"
-							style="
-								color: inherit;
-								text-decoration: none;
-							"
-							>Smirnovapolina.03@mail.ru</a
-						>
-					</td>
-				</tr>
-			</table>
+		<!-- Адаптивные контакты -->
+		<table role="presentation" class="email-container" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 650px; margin: 0 auto;">
+			<tr>
+				<td class="contacts" style="background-color: #d4ff00; padding: 40px 20px; font-size: 16px; font-family: Georgia, serif; margin: 40px 20px;">
+					<strong>Буду рада обсудить сотрудничество! Хорошего дня!</strong><br />
+					Смирнова Полина / ТГ:
+					<a href="https://t.me/avopolly" style="color: inherit; text-decoration: none; font-family: Georgia, serif;">@avopolly</a>
+					/
+					<a href="mailto:Smirnovapolina.03@mail.ru" style="color: inherit; text-decoration: none; font-family: Georgia, serif;">Smirnovapolina.03@mail.ru</a>
 				</td>
 			</tr>
 		</table>
 
-		
+		<!--[if mso]>
+		</td>
+		</tr>
+		</table>
+		<![endif]-->
 	</body>
 </html>
